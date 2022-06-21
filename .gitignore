@@ -1,4 +1,4 @@
-.out/
 .idea/
 *.7z
 *.iml
+*.class
