@@ -1,0 +1,60 @@
+-- ----------------------
+-- Create Text table
+-- ----------------------
+CREATE TABLE Text
+(
+  id				int  		NOT NULL	AUTO_INCREMENT ,
+  name				char(50)  	NOT NULL ,
+  paragraph_num		int  		NOT NULL DEFAULT 1 , 
+  PRIMARY KEY (id)
+);
+
+-- ----------------------
+-- Create Paragraph table
+-- ----------------------
+CREATE TABLE Paragraph
+(
+  id				int			NOT NULL	AUTO_INCREMENT ,
+  text_id			int			NOT NULL ,
+  paragraph			int			NOT NULL ,
+  text_paregraph 	text(2000) ,
+  PRIMARY KEY (id) ,
+  FOREIGN KEY (text_id)  REFERENCES Text (id)
+);
+
+
+-- ------------------------
+-- Populate Text table
+-- ------------------------
+INSERT INTO Text(name)
+VALUES('Who gets what?');
+
+INSERT INTO Text(name)
+VALUES('Wings for people.');
+
+-- ------------------------
+-- Populate Paragraph table
+-- ------------------------
+INSERT INTO Paragraph (text_id, paragraph, text_paregraph)
+VALUES(1, 1, 'Mr. Lopez likes fish. So one day he went fishing. He went to the lake. He thought of the fish cooking. It made him hungry.');
+
+INSERT INTO Paragraph (text_id, paragraph, text_paregraph)
+VALUES(1, 2, 'At last he got a fish. He started cooking it for dinner. But along came a bear. The bear liked fish too.');
+
+INSERT INTO Paragraph (text_id, paragraph, text_paregraph)
+VALUES(1, 3, 'So the bear got the fish. And Mr. Lopez got away.');
+
+INSERT INTO Paragraph (text_id, paragraph, text_paregraph)
+VALUES(2, 1, 'It’s fun to fly. Birds and bees fly. They have wings.');
+
+INSERT INTO Paragraph (text_id, paragraph, text_paregraph)
+VALUES(2, 2, 'People wanted to fly, too. But people have no wings. So they had to find other ways.');
+
+INSERT INTO Paragraph (text_id, paragraph, text_paregraph)
+VALUES(2, 3, 'They made big balloons. But balloons can’t go very far or fast.');
+
+INSERT INTO Paragraph (text_id, paragraph, text_paregraph)
+VALUES(2, 4, 'Then people made jets. Jets can go a long way in a short time. But people still couldn’t fly alone.');
+
+INSERT INTO Paragraph (text_id, paragraph, text_paregraph)
+VALUES(2, 5, 'Then people made wings. Now some people can fly. People have to learn how use the wings. It’s hard work. But it’s fun.');
