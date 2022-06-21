@@ -1,5 +1,9 @@
 package com.hobbytyping;
 
+/**
+ * To test methods, uncomment the desired call.
+ */
+
 public class Main {
 
     public static void main(String[] args) {
